@@ -20,7 +20,7 @@ namespace ConsoleUI
                 Console.WriteLine(car.Description);
             }
             Console.WriteLine("-------GetById()------");
-            productManager.GetById(1);
+            productManager.GetById(2);
             
               
                 Console.WriteLine("-------Add()------");

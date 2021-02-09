@@ -17,13 +17,12 @@ namespace ConsoleUI
             Console.WriteLine("-------GetAll()------");
             foreach (var car in productManager.GetAll())
             {
-                Console.WriteLine(car);
+                Console.WriteLine(car.Description);
             }
             Console.WriteLine("-------GetById()------");
-            foreach (var car in productManager.GetById(1))
-            {
-                Console.WriteLine("Araba : " + car.Description + " Marka Id : " + car.ColorId + " Model Yılı : " + car.ModelYear);
-
+            productManager.GetById(1);
+            
+              
                 Console.WriteLine("-------Add()------");
 
                 Car car1 = new Car()
@@ -59,4 +58,4 @@ namespace ConsoleUI
             }
         }
     }
-}
+

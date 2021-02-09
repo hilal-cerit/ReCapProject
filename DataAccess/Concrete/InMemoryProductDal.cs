@@ -27,13 +27,17 @@ namespace DataAccess.Concrete
         {
             return _cars;
         }
-        public List<Car> GetById(int id)
+        public void GetById(int id)
         {
+            var results = _cars.Where(p => p.Id == id);
+            foreach (var result in results)
+            {
+                Console.WriteLine("CAR HORSEPOWER : " + result.Description + " BRAND ID : " + result.ColorId + " MODEL YEAR : " + result.ModelYear);
 
-            return _cars.Where(p => p.Id == id).ToList();
+            }
         }
 
-        public void Add(Car car)
+            public void Add(Car car)
         {
             _cars.Add(car);
         }

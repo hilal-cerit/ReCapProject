@@ -30,7 +30,7 @@ namespace DataAccess.Concrete
         public List<Car> GetById(int id)
         {
 
-            return _cars.Where(c => c.Id == id).ToList();
+            return _cars.Where(p => p.Id == id).ToList();
         }
 
         public void Add(Car car)

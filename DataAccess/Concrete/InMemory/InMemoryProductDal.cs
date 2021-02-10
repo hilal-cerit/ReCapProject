@@ -29,7 +29,7 @@ namespace DataAccess.Concrete
         }
         public void GetById(int id)
         {
-            var results = _cars.Where(p => p.Id == id);
+            var results = _cars.Where(p => p.Id == id).ToList();
             foreach (var result in results)
             {
                 Console.WriteLine("CAR HORSEPOWER : " + result.Description + " BRAND ID : " + result.ColorId + " MODEL YEAR : " + result.ModelYear);

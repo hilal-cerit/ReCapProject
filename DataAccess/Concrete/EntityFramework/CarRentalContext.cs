@@ -11,19 +11,21 @@ namespace DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server= desktop-e57p7ju ; Database=CarRental;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server= DESKTOP-E57P7JU ; Database=CarRental;Trusted_Connection=true");
         }
       public DbSet<Car> Cars { get; set; }
        
         public DbSet<Color> Colors { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Brand>().ToTable("Brands");
-            modelBuilder.Entity<Brand>().Property(p => p.BrandId).HasColumnName("BrandId");
 
-            modelBuilder.Entity<Brand>().Property(p => p.BrandName).HasColumnName("BrandName");
-        }
+         public DbSet<Brand> Brands { get; set; }
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Brand>().ToTable("Brands");
+        //    modelBuilder.Entity<Brand>().Property(p => p.BrandId).HasColumnName("BrandId");
+
+        //    modelBuilder.Entity<Brand>().Property(p => p.BrandName).HasColumnName("BrandName");
+        //}
 
     }
 }

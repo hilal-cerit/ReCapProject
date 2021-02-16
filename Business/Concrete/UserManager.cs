@@ -19,22 +19,22 @@ namespace Business.Concrete
         }
         public IResult Add(User user)
         {
-            throw new NotImplementedException();
+            return new SuccessResult();
         }
 
         public IResult Delete(User user)
         {
-            throw new NotImplementedException();
+            return new SuccessResult();
         }
 
         public IDataResult<List<User>> GetAll()
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<User>>(_userDal.GetAll());
         }
 
         public IResult Update(User user)
         {
-            throw new NotImplementedException();
+            return new SuccessResult();
         }
     }
 }

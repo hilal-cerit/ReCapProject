@@ -19,12 +19,12 @@ namespace Business.Concrete
         }
         public IResult Add(Customer customer)
         {
-            throw new NotImplementedException();
+            return new SuccessResult();
         }
 
         public IResult Delete(Customer customer)
         {
-            throw new NotImplementedException();
+            return new SuccessResult();
         }
 
         public IDataResult<List<Customer>> GetAll()
@@ -34,7 +34,7 @@ namespace Business.Concrete
 
         public IResult Update(Customer customer)
         {
-            throw new NotImplementedException();
+            return new SuccessResult();
         }
     }
 }

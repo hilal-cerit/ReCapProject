@@ -18,54 +18,68 @@ namespace ConsoleUI
 
 
 
-            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            //CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
 
-            var result2 = customerManager.GetAll();
-            if (result2.Success == true)
-            {
-                foreach (var item in result2.Data)
+            //var result2 = customerManager.GetAll();
+            //if (result2.Success == true)
+            //{
+            //    foreach (var item in result2.Data)
+            //    {
+            //        Console.WriteLine(item.CompanyName);
+
+            //    }
+            //    Console.WriteLine(result2.Message);
+
+
+
+                //RentalManager rentalManager = new RentalManager(new EfRentalDal());
+                //var result = rentalManager.GetAll();
+                //if (result.Success == true)
+                //{
+                //    foreach (var item in result.Data)
+                //    {
+                //        Console.WriteLine("Customer Id: {0} ///Car Id: {1} //  RentBeginDate : {2}", item.CustomerId, item.CarId, item.RentBeginDate);
+                //    }
+                //}
+                //else
+                //{
+                //    Console.WriteLine(result.Message);
+                //}
+
+               UserManager userManager = new UserManager(new EfUserDal());
+                var result4 = userManager.GetAll();
+                if (result4.Success == true)
                 {
-                    Console.WriteLine(item.CompanyName);
-
-                }
-                Console.WriteLine(result2.Message);
-
-
-
-                RentalManager rentalManager = new RentalManager(new EfRentalDal());
-                var result = rentalManager.GetAll();
-                if (result.Success == true)
-                {
-                    foreach (var item in result.Data)
+                    foreach (var item in result4.Data)
                     {
-                        Console.WriteLine("Customer Id: {0} ///Car Id: {1} //  RentBeginDate : {2}", item.CustomerId, item.CarId, item.RentBeginDate);
+                        Console.WriteLine("User Email: {0} ///User Name {1} //  User SName : {2}",item.Email,item.FirstName,item.LastName);
                     }
                 }
                 else
                 {
-                    Console.WriteLine(result.Message);
+                    Console.WriteLine(result4.Message);
                 }
 
 
 
-                CarManager carManager = new CarManager(new EfCarDal());
-                var result1 = carManager.GetAll();
-                    if (result1.Success == true)
-                    {
-                        foreach (var item in result1.Data)
-                        {
-                            Console.WriteLine("Car Name: " + item.CarName);
+            //    CarManager carManager = new CarManager(new EfCarDal());
+            //    var result1 = carManager.GetAll();
+            //        if (result1.Success == true)
+            //        {
+            //            foreach (var item in result1.Data)
+            //            {
+            //                Console.WriteLine("Car Name: " + item.CarName);
 
-                        }
-                        Console.WriteLine(result1.Message);
-                    }
+            //            }
+            //            Console.WriteLine(result1.Message);
+            //        }
              
 
 
 
 
 
-            }
+            //}
 
 
 

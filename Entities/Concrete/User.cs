@@ -12,9 +12,9 @@ namespace Entities.Concrete
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        [Required(ErrorMessage = "Email is required")]
-        [RegularExpression(@"[A-Za-z0-9._%+-]+[A-Za-z0-9.-]+\.[A-Za-z] {2,4}")]
-        public String Email { get; set; }
+        //[Required(ErrorMessage = "Email is required")]
+        //[RegularExpression(@"[A-Za-z0-9._%+-]+[A-Za-z0-9.-]+\.[A-Za-z] {2,4}")]
+        public string Email { get; set; }
 
         public int Password { get; set; }
 

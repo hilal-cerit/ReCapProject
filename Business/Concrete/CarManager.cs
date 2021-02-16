@@ -22,7 +22,7 @@ namespace Business.Concrete
         public IDataResult<List<Car>> GetAll()
         {   //iş kodları
             //yetkisi var mı?
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll());
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(),Messages.List);
         }
 
         public IDataResult<Car> GetById(int id)
@@ -32,6 +32,12 @@ namespace Business.Concrete
 
         public IDataResult<List<CarDetailDto>> GetCarDetailDtos()
         {
+            if (DateTime.Now.Hour == 13)
+            {
+                return new ErrorDataResult<List<CarDetailDto>>(_carDal.GetCarDetailDtos(),Messages.MaintenanceTime);
+            }
+
+
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetailDtos());
         }
 
@@ -44,29 +50,6 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.ColorId == id));
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         public IResult Add(Car car)

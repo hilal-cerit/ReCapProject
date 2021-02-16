@@ -15,6 +15,33 @@ namespace ConsoleUI
     
 
             CarManager carManager = new CarManager(new EfCarDal());
+            var result = carManager.GetCarDetailDtos();
+                if (result.Success == true)
+            {
+                foreach (var item in result.Data)
+                {
+                    Console.WriteLine("Car Name: {0} ///Brand Name: {1}  ",item.CarName,item.BrandName);
+                }  }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+            var result1 = carManager.GetAll();
+            if (result1.Success == true)
+            {
+                foreach (var item in result1.Data)
+                {
+                    Console.WriteLine("Car Name: "+ item.CarName);
+                    
+                }
+                Console.WriteLine(result1.Message);
+            }
+
+            
+
+
+
+
             //foreach (var item in carManager.GetCarDetailDtos())
             //{
             //    Console.WriteLine("{0}/{1}",
@@ -32,7 +59,7 @@ namespace ConsoleUI
             //    ModelYear = 1998
             //};
 
-          
+
 
             //carManager.Add(car1);
             //Car car2 = new Car
@@ -50,7 +77,7 @@ namespace ConsoleUI
             //{
             //    Console.WriteLine(items.CarName);
             //}
-  
+
 
             //carManager.Update(car2);
 
@@ -62,12 +89,12 @@ namespace ConsoleUI
 
 
 
-          
+
             //foreach (var items in carManager.GetById(2))
             //{ Console.WriteLine(items.CarName); }
 
 
-  
+
             //carManager.Delete(car2);
 
             //foreach (var items in carManager.GetAll())
@@ -86,7 +113,7 @@ namespace ConsoleUI
             //}
 
 
-             
+
 
 
 

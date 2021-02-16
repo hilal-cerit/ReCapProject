@@ -13,5 +13,6 @@ namespace Business.Constans
         public static string CarUpdate="Car Is Updated";
         public static string MaintenanceTime = "Please Try Later";
         public static string List= "Cars Are Listed";
+        public static string CarRented= "Car Is Rented";
     }
 }

@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="DTOs\CarRentalDto.cs~RFd110d21.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Abstract\" />
   </ItemGroup>
 

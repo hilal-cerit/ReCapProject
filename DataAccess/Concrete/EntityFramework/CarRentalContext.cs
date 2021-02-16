@@ -19,12 +19,16 @@ namespace DataAccess.Concrete.EntityFramework
 
 
          public DbSet<Brand> Brands { get; set; }
+        public DbSet<Rental> Rentals { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
-        //    modelBuilder.Entity<Brand>().ToTable("Brands");
-        //    modelBuilder.Entity<Brand>().Property(p => p.BrandId).HasColumnName("BrandId");
+        //    modelBuilder.Entity<Rental>().ToTable("Rentals");
+        //    modelBuilder.Entity<Rental>().Property(p => p.RentalId).HasColumnName("RentalId");
 
-        //    modelBuilder.Entity<Brand>().Property(p => p.BrandName).HasColumnName("BrandName");
+        //    modelBuilder.Entity<Rental>().Property(p => p.RentBeginDate).HasColumnName("RentBeginDate");
+        //    modelBuilder.Entity<Rental>().Property(p => p.RentReturnDate).HasColumnName("RentReturnDate");
         //}
 
     }

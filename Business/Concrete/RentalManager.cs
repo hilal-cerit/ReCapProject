@@ -22,7 +22,7 @@ namespace Business.Concrete
         {
             if (DateTime.Now==rental.RentBeginDate)
             {
-                return new SuccessResult(Messages.CarRented);
+                return new SuccessResult(Messages.RentalAdded);
             }
             else
             {
@@ -33,7 +33,7 @@ namespace Business.Concrete
 
         public IResult Delete(Rental rental)
         {
-            return new SuccessResult();
+            return new SuccessResult(Messages.RentalDeleted);
         }
 
         public IDataResult<List<Rental>> GetAll()
@@ -45,7 +45,32 @@ namespace Business.Concrete
 
         public IResult Update(Rental rental)
         {
-            return new SuccessResult();
+            return new SuccessResult(Messages.RentalUpdated);
         }
+
+
+
+        public IDataResult<Rental> GetById(int rentalId)
+        {
+            return new SuccessDataResult<Rental>(_rentalDal.Get(c => c.RentalId == rentalId));
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

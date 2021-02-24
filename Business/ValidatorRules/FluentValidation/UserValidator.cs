@@ -21,7 +21,6 @@ namespace Business.ValidatorRules.FluentValidation
 
             //    RuleFor(x => x.ConfirmPassword).NotEmpty().WithMessage("Please confirm your password.");
 
-
             //if (!(password.Contains("@") || password.Contains("#") 
             //         || password.Contains("!") || password.Contains("~") 
             //         || password.Contains("$") || password.Contains("%") 

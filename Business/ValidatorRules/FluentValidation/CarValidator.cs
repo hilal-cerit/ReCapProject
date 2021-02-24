@@ -15,14 +15,16 @@ namespace Business.ValidatorRules.FluentValidation
             RuleFor(p => p.CarName).NotEmpty();
             RuleFor(p => p.DailyPrice).GreaterThan(0);
             RuleFor(p => p.DailyPrice).GreaterThanOrEqualTo(0).When(p=>p.CarId==1);
-            RuleFor(p => p.CarName).Must(StartWithA).WithMessage("hello");
+            RuleFor(p => p.CarName).Must(StartWithA).WithMessage("Car Name must start with 'a' or 'A'");
 
 
         }
 
         private bool StartWithA(string arg)
         {
-            return arg.StartsWith("a");
+            return arg.StartsWith("a")||arg.StartsWith("A");
+            
+           
         }
     }
 

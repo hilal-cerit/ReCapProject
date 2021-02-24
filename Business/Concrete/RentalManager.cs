@@ -19,15 +19,15 @@ namespace Business.Concrete
             _rentalDal = rentalDal;
         }
         public IResult Add(Rental rental)
-        {
-            if (DateTime.Now==rental.RentBeginDate)
-            {
+        {//validatora ekledim bunları
+            //if (DateTime.Now==rental.RentBeginDate)
+            //{
                 return new SuccessResult(Messages.RentalAdded);
-            }
-            else
-            {
-                return new ErrorResult();
-            }
+            //}
+            //else
+            //{
+            //    return new ErrorResult();
+            //}
 
         }
 

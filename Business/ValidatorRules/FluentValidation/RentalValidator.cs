@@ -11,7 +11,9 @@ namespace Business.ValidatorRules.FluentValidation
 
         public RentalValidator()
         {
-            RuleFor(r => r.RentBeginDate == DateTime.Now);
+            RuleFor(r => r.RentBeginDate).NotNull();
+            
+            RuleFor(r => r.RentBeginDate).GreaterThanOrEqualTo(r => r.RentReturnDate);
 
 
 

@@ -39,8 +39,8 @@ namespace Business.Constans
         public static string RentalDeleted = "Rental deleted.";
         public static string RentalUpdated = "Rental updated.";
 
+        public static string LimitIsFull = "Limit is full.You can't add it.";
 
-
-
+        
     }
 }

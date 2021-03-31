@@ -37,9 +37,9 @@ namespace Business.Concrete
         {
             return new SuccessResult(Messages.CustomerUpdated);
         }
-        public IDataResult<Customer> GetByUserId(int userId)
+        public IDataResult<Customer> GetByUserId(int customerId)
         {
-            return new SuccessDataResult<Customer>(_customerDal.Get(c => c.UserId == userId));
+            return new SuccessDataResult<Customer>(_customerDal.Get(c => c.CustomerId == customerId));
         }
     }
 }

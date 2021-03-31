@@ -10,6 +10,7 @@ using Entities;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Business.Concrete
 {
@@ -21,46 +22,61 @@ namespace Business.Concrete
         {
             _carDal = carDal;
         }
-
+        public IDataResult<List<Car>> GetByUnitPrice(decimal min, decimal max)
+        {
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.DailyPrice >= min && p.DailyPrice <= max));
+        }
         public IDataResult<List<Car>> GetAll()
-        {   //iş kodları
-            //yetkisi var mı?
+        {   
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(),Messages.List);
         }
 
-        public IDataResult<Car> GetById(int id)
+        public IDataResult<List<Car>> GetById(int carId)
         {
-            return new SuccessDataResult<Car>(_carDal.Get(p => p.CarId == id));
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.CarId == carId));
         }
 
         public IDataResult<List<CarDetailDto>> GetCarDetailDtos()
         {
-            if (DateTime.Now.Hour == 13)
-            {
-                return new ErrorDataResult<List<CarDetailDto>>(_carDal.GetCarDetailDtos(),Messages.MaintenanceTime);
-            }
+            //if (DateTime.Now.Hour == 13)
+            //{
+           //     return new ErrorDataResult<List<CarDetailDto>>(_carDal.GetCarDetailDtos(),Messages.MaintenanceTime);
+          //  }
 
 
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetailDtos());
         }
 
-        public IDataResult<List<Car>> GetCarsByBrandId(int id)
+        public IDataResult<List<Car>> GetCarsByBrandId(int carId)
         {
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(p=>p.BrandId==id));
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(p=>p.BrandId == carId));
         }
 
-        public IDataResult<List<Car>> GetCarsByColorId(int id)
+        public IDataResult<List<Car>> GetCarsByColorId(int carId)
         {
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.ColorId == id));
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.ColorId == carId));
         }
 
-        [ValidationAspect(typeof(CarValidator))]//CarValidatordaki kurallara göre Add'i doğrula demek
-        //yani iş kodlarıyla validaysanu attribute ile birleştirdik
+        [ValidationAspect(typeof(CarValidator))]
+
         public IResult Add(Car car)
         {
             //ValidationTool.Validate(new CarValidator(), car);
 
+
+            //if (CheckIfCarCountOfIdCorrect(car.CarId).Success&&CheckIfCarNameExists(car.CarName).Success) { 
+
+            _carDal.Add(car);
             return new SuccessResult(Messages.CarAdd);
+
+
+            //}
+            //return new ErrorResult();
+
+
+
+
+
         }
 
         public IResult Update(Car car)
@@ -74,10 +90,30 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CarDelete);
 
         }
+         private IResult CheckIfCarCountOfIdCorrect(int id)
+        {
+            //var result = _carDal.GetAll(p => p.CarId == id).Count;
+            //if (result>10)
+            //{
+            //    return new ErrorResult();
+            //}
+            return new SuccessResult();
+        }
+        private IResult CheckIfCarNameExists(string carName)
+        {
+            var result = _carDal.GetAll(p => p.CarName == carName).Any();
 
+            if (result)
+            {
+                return new ErrorResult();
+            }
+            return new SuccessResult();
 
+        }
+      
+        }
 
 
 
     }
-}
+

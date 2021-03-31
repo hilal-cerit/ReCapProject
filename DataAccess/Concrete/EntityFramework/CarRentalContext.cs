@@ -22,13 +22,16 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Rental> Rentals { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Customer> Customers { get; set; }
+public DbSet<CarImage> CarImages { get; set; }
+
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
-        //    modelBuilder.Entity<Rental>().ToTable("Rentals");
-        //    modelBuilder.Entity<Rental>().Property(p => p.RentalId).HasColumnName("RentalId");
+        //    modelBuilder.Entity<CarImage>().ToTable("CarImages");
+        //    modelBuilder.Entity<CarImage>().Property(p => p.CarImageId).HasColumnName("CarImageId");
 
-        //    modelBuilder.Entity<Rental>().Property(p => p.RentBeginDate).HasColumnName("RentBeginDate");
-        //    modelBuilder.Entity<Rental>().Property(p => p.RentReturnDate).HasColumnName("RentReturnDate");
+        //    modelBuilder.Entity<CarImage>().Property(p => p.CarId).HasColumnName("CarId");
+        //    modelBuilder.Entity<CarImage>().Property(p => p.ImageDate).HasColumnName("ImageDate");
+        //    modelBuilder.Entity<CarImage>().Property(p => p.ImagePath).HasColumnName("ImagePath");
         //}
 
     }

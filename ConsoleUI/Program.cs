@@ -10,9 +10,9 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-          
+
             // CarManagerGetCarDetailsDto(carManager);
-           
+
             //     CrudOperations(carManager);
 
 
@@ -32,33 +32,33 @@ namespace ConsoleUI
 
 
 
-                //RentalManager rentalManager = new RentalManager(new EfRentalDal());
-                //var result = rentalManager.GetAll();
-                //if (result.Success == true)
-                //{
-                //    foreach (var item in result.Data)
-                //    {
-                //        Console.WriteLine("Customer Id: {0} ///Car Id: {1} //  RentBeginDate : {2}", item.CustomerId, item.CarId, item.RentBeginDate);
-                //    }
-                //}
-                //else
-                //{
-                //    Console.WriteLine(result.Message);
-                //}
+            //RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            //var result = rentalManager.GetAll();
+            //if (result.Success == true)
+            //{
+            //    foreach (var item in result.Data)
+            //    {
+            //        Console.WriteLine("Customer Id: {0} ///Car Id: {1} //  RentBeginDate : {2}", item.CustomerId, item.CarId, item.RentBeginDate);
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine(result.Message);
+            //}
 
-               UserManager userManager = new UserManager(new EfUserDal());
-                var result4 = userManager.GetAll();
-                if (result4.Success == true)
-                {
-                    foreach (var item in result4.Data)
-                    {
-                        Console.WriteLine("User Email: {0} ///User Name {1} //  User SName : {2}",item.Email,item.FirstName,item.LastName);
-                    }
-                }
-                else
-                {
-                    Console.WriteLine(result4.Message);
-                }
+            //UserManager userManager = new UserManager(new EfUserDal());
+            // var result4 = userManager.GetAll();
+            // if (result4.Success == true)
+            // {
+            //     foreach (var item in result4.Data)
+            //     {
+            //         Console.WriteLine("User Email: {0} ///User Name {1} //  User SName : {2}",item.Email,item.FirstName,item.LastName);
+            //     }
+            // }
+            // else
+            // {
+            //     Console.WriteLine(result4.Message);
+            // }
 
 
 
@@ -73,7 +73,7 @@ namespace ConsoleUI
             //            }
             //            Console.WriteLine(result1.Message);
             //        }
-             
+
 
 
 
@@ -151,7 +151,7 @@ namespace ConsoleUI
             //        Console.WriteLine(items.CarName);
             //    }
             //}
-        //------------------------------------------------------------------------------------------//
+            //------------------------------------------------------------------------------------------//
             //private static void CarManagerGetCarDetailsDto(CarManager carManager)
             //{
             //    var result = carManager.GetCarDetailDtos();
@@ -167,7 +167,6 @@ namespace ConsoleUI
             //        Console.WriteLine(result.Message);
             //    }
             //}
-
 
 
 

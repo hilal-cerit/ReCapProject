@@ -27,8 +27,9 @@ namespace Business.Concrete
 
         [ValidationAspect(typeof(CarImageValidator))]
         public IResult Add(IFormFile file, CarImage carImage)
-        {
+        { 
             IResult result = BusinessRules.Run(CheckCarImageLimit(carImage.CarId));
+
 
             if (result != null)
             {
@@ -88,13 +89,13 @@ namespace Business.Concrete
 
             return new SuccessResult();
         }
-        private IResult ShowDefaultImage(List<CarImage> result, int CarId)
+        private IResult ShowDefaultImage(List<CarImage> result, int carId)
         {
             if (!result.Any())
             {
                 var DefaultCarImage = new CarImage
                 {
-                    CarId = CarId,
+                    CarId = carId,
                     ImagePath = Environment.CurrentDirectory + @"\Images\DefaultCar.jpg",
                     ImageDate = DateTime.Now
                 };
